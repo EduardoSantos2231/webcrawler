@@ -1,3 +1,4 @@
+import sanitize from "sanitize-html";
 import type { SolidesResponse, JobsData } from "../@types/index.js";
 
 export async function fetchSolidesMultipleTimes(numberOfpages: number) {
@@ -26,7 +27,7 @@ export async function fetchSolidesMultipleTimes(numberOfpages: number) {
       },
       city: {name: vaga.city.name},
       companyName: vaga.companyName,
-      description: vaga.description,
+      description: cleanDescription(vaga.description),
       id: vaga.id,
     }))
     data.push(...usefulData)
@@ -38,3 +39,6 @@ export async function fetchSolidesMultipleTimes(numberOfpages: number) {
   }
 }
 
+const cleanDescription = (description: string): string => {
+  return sanitize(description, {allowedTags: [], allowedAttributes: {}}).replaceAll("\n", "")
+};
