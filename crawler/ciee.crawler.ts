@@ -15,6 +15,7 @@ export async function fetchCieeMultipleTimes(numberOfPages: number) {
         codigoVaga: vaga.codigoVaga,
         salario: vaga.salario,
         areaAtuacao: vaga.areaAtuacao,
+        areaProfissional: vaga.areaProfissional,
         atividades: vaga.atividades,
         bolsaAuxilio: vaga.bolsaAuxilio,
         descricao: vaga.descricao,

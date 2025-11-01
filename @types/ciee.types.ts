@@ -4,6 +4,7 @@ export interface CieeVaga{
   tipoVaga: string,
   nomeEmpresa: string,
   areaAtuacao: string | null,
+  areaProfissional: string,
   salario: number | null,
   bolsaAuxilio: number | null,
   local: LocalTrabalho,
