@@ -1,4 +1,4 @@
-import type { CieeResponse, CieeVaga } from "../@types/ciee.types.js";
+import type { CieeResponse, CieeVaga } from "../@types/index.js";
 
 export async function fetchCieeMultipleTimes(numberOfPages: number) {
   const data: CieeVaga[] = [];
@@ -12,12 +12,12 @@ export async function fetchCieeMultipleTimes(numberOfPages: number) {
 
       const usefulData: CieeVaga[] = response.content.map((vaga) => ({
         plataforma: "---Ciee----",
-        codigoVaga: vaga.codigoVaga,
+        areaProfissional: vaga.areaProfissional,
         salario: vaga.salario,
         areaAtuacao: vaga.areaAtuacao,
-        areaProfissional: vaga.areaProfissional,
-        atividades: vaga.atividades,
         bolsaAuxilio: vaga.bolsaAuxilio,
+        codigoVaga: vaga.codigoVaga,
+        atividades: vaga.atividades,
         descricao: vaga.descricao,
         horarioEntrada: vaga.horarioEntrada,
         horarioSaida: vaga.horarioSaida,

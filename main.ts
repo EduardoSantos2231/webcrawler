@@ -1,5 +1,7 @@
-import { fetchCieeMultipleTimes } from "./crawler/ciee.crawler.js";
+import { fetchCieeMultipleTimes, fetchSolidesMultipleTimes } from "./crawlers/index.js"
 
+// const data = await fetchCieeMultipleTimes(1)
+// console.log(data)
 
-const data = await fetchCieeMultipleTimes(1)
+const data = await fetchSolidesMultipleTimes(1)
 console.log(data)
